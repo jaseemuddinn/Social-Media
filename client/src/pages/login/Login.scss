@@ -1,56 +1,60 @@
 
+
 .Login {
+
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
+    .login-box{
+padding: 40px;
+border: 2px solid black;
+border-radius: 4px;
+
+    }
+
     .heading{
+
         text-align: center;
-        color: black;
     }
 
-    .login-box {
-         padding: 40px;
-         border: 1px solid white;
-        min-width: 400px;
-        background-color: rgb(254, 254, 208);
-        border-radius: 20px;
-    }
+    label,input{
 
-    label, input {
         display: block;
-        width: 100%;
+        width:100%;
         margin-block: 8px;
-        color: black;
-        border-radius: 10px;
-        
+          
     }
-    label{
-        // padding-bottom: 10px;
-        font-weight: bold; 
-    }
-    input{
-        padding: 12px 16px ;
-        border: 1px solid black;
 
+    label{
+
+        font-weight: bold;
+    }
+
+    input{
+
+        padding: 8px 16px;
+        border-radius:3px;
     }
 
     .submit{
-        background-color: #29b4ff;
+
+        background-color: rgb(50, 50, 144);
         color: white;
-         border: none;
-         font-weight: bold;
-         margin-top: 16px;
+        border:none;
+        margin-top:16px;
     }
+.submit:hover{
 
-    .submit:hover{
-        background-color: #249dde;
-    }
-
-    p{
-        text-align: center;
-        margin-top: 18px;
-    }
+    background-color:aqua;
+    font-weight: bold;
 }
 
+.subheading{
+margin-top: 16px;
+
+}
+
+
+}

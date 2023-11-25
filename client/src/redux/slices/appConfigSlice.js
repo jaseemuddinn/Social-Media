@@ -1,31 +1,57 @@
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import { axiosClient } from '../../utils/axiosClient';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { axiosClient } from "../../utils/axiosClient";
 
-
-export const getMyInfo = createAsyncThunk('user/getMyInfo', async (body, thunkAPI) => {
+export const getMyInfo = createAsyncThunk(
+  "user/getMyInfo",
+  async (body) => {
     try {
-        thunkAPI.dispatch(setLoading(true))
-        const result = await axiosClient.get('/user/getMyInfo')
-        console.log('api called data', result);
-    } catch (e) {
-        return Promise.reject(e)
-    } finally {
-        thunkAPI.dispatch(setLoading(false))
+      const response = await axiosClient.get("/user/getMyInfo");
+      return response.result;
+    } catch (error) {
+      return Promise.reject(error);
     }
-} )
+  }
+);
+
+export const updateMyProfile = createAsyncThunk(
+  "user/updateMyProfile",
+  async (body) => {
+    try {
+      const response = await axiosClient.put("/user/", body);
+      return response.result;
+    } catch (error) {
+      return Promise.reject(error);
+    } 
+  }
+);
 
 const appConfigSlice = createSlice({
-    name: 'appConfigSlice',
-    initialState: {
-        isLoading: false
+  name: "appConfigSlice",
+  initialState: {
+    isLoading: false,
+    myProfile: null,
+    toastData: null,
+  },
+  reducers: {
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
     },
-    reducers:{
-        setLoading: (state, action) => {
-            state.isLoading = action.payload;
-        } 
-    }
-})
+
+    showToast: (state, action) => {
+      state.toastData = action.payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getMyInfo.fulfilled, (state, action) => {
+        state.myProfile = action.payload.user;
+      })
+      .addCase(updateMyProfile.fulfilled, (state, action) => {
+        state.myProfile = action.payload.user;
+      });
+  },
+});
 
 export default appConfigSlice.reducer;
 
-export const {setLoading} = appConfigSlice.actions;
+export const { setLoading, showToast } = appConfigSlice.actions;
