@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
   ) {
     // return res.status(401).send("authorization header required");
 
-    return res.send(error(401, "authorization header us required"));
+    return res.send(error(401, "authorization header required"));
   }
 
   const accestoken = req.headers.authorization.split(" ")[1];
@@ -30,6 +30,6 @@ module.exports = async (req, res, next) => {
     console.log(e);
     // return res.status(401).send("invalid access key");
 
-    return res.send(error(401, "invalid acces key"));
+    return res.send(error(401, "invalid access key"));
   }
 };

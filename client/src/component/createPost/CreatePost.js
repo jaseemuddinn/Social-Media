@@ -72,7 +72,7 @@ function CreatePost() {
           </div>
         )}
 
-        {/* 29 se 31 tabhi dekkhna jab hum post sleect kar lete hai  iske liye thdoa jsx llikunga */}
+        {/* 29 se 31 tabhi dekkhna jab hum post select kar lete hai  iske liye thdoa jsx llikunga */}
         <div className="bottom-part">
           <div className="input-post-img">
             <label htmlFor="inputImg" className="labelImg">
