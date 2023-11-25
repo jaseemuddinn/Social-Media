@@ -10,8 +10,7 @@ This social media project is currently under development. Feel free to contribut
 
 ## Known Issues
 
-🚧 **Issue: Refresh Token Not Sent to Cookies After Login**
-   - Users may encounter an issue where the refresh token is not being sent to cookies after login.
+🚧 **Issue: UI is very basic**
    - If you have a solution for this issue, please submit a pull request with your proposed changes.
 
 ## Getting Started
