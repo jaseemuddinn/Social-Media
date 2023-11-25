@@ -85,15 +85,13 @@ p {
   background-color: var(--accent-color);
 }
 
-.btn-secondary {
-  border: 2px solid var(--accent-color);
+.btn-secondary{
+  border: 2px solid var(--border-color);
   color: var(--accent-color);
   font-weight: bold;
-  padding: 10px 40px;
-  border-radius: 4px;
+  padding: 10px 25px;
   cursor: pointer;
-  background: none;
-
+  border-radius: 5px;
 }
 
 

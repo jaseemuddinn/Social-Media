@@ -77,7 +77,7 @@ function UpdateProfile() {
             <input type="submit" className="btn-primary" />
           </form>
 
-          <button className="delete-account btn-primary">delete account</button>
+          <button className="btn-secondary delete-btn">delete account</button>
         </div>
       </div>
     </div>

@@ -87,7 +87,7 @@ function CreatePost() {
             />
           </div>
           <div className="post-btn btn-primary" onClick={hanldePostSubmit}>
-            post
+            Post
           </div>
         </div>
       </div>
