@@ -48,8 +48,8 @@ function Login() {
             id="password"
             onChange={(e) => setpassword(e.target.value)}
           />
-
           <input type="submit" className="submit" />
+
         </form>
 
         <p className="subheading">
