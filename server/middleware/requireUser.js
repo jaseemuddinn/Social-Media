@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
   ) {
     // return res.status(401).send("authorization header required");
 
-    return res.send(error(401, "authorization header required"));
+    return res.send(error(401, "Authorization Header Required"));
   }
 
   const accestoken = req.headers.authorization.split(" ")[1];
@@ -23,13 +23,13 @@ module.exports = async (req, res, next) => {
 
     const user = await User.findById(req._id);
     if (!user) {
-      return res.send(error(404, "user not found"));
+      return res.send(error(404, "User Not Found"));
     }
     next();
   } catch (e) {
     console.log(e);
     // return res.status(401).send("invalid access key");
 
-    return res.send(error(401, "invalid access key"));
+    return res.send(error(401, "Invalid Access Key"));
   }
 };
